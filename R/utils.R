@@ -79,6 +79,10 @@ prideMiniList2DF <- function(prideMiniList){
 ##' @title prideAllList2DF
 ##' @name prideAllList2DF
 ##' @description  prideAllList2DF
+##' @export
+##' @examples
+##' pride.projects <- getAllPrideProject()
+##' pride.projects.df <- prideAllList2DF(pride.projects)
 prideAllList2DF <- function(prideAllList){
   prideList <- lapply(prideAllList,prideMiniList2DF)
   #---------

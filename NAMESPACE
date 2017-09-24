@@ -3,4 +3,5 @@
 export(getAllPrideProject)
 export(getPrideProject)
 export(getProjectCount)
+export(prideAllList2DF)
 export(prideMiniList2DF)
