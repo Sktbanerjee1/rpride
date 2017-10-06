@@ -8,13 +8,14 @@
 ##' pp <- getPrideProject(pxd)
 
 getPrideProject <- function(pxd){
-  link <- paste0('http://www.ebi.ac.uk:80/pride/ws/archive/project/',pxd)
-  #----------
-  if (!requireNamespace("httr", quietly = TRUE)) {
-    stop("Pkg needed for this function to work. Please install it.",
-         call. = FALSE)
-  }
-  #----------
+  link <- paste0('http://www.ebi.ac.uk:80/pride/ws/archive/project/',
+                 pxd)
+  # #----------
+  # if (!requireNamespace("httr", quietly = TRUE)) {
+  #   stop("Pkg needed for this function to work. Please install it.",
+  #        call. = FALSE)
+  # }
+  # #----------
   contentPRIDE <- httr::GET(link)
   queryContent <- connectionStatus(contentPRIDE)
   return(queryContent)

@@ -86,10 +86,10 @@ prideMiniList2DF <- function(prideMiniList){
 prideAllList2DF <- function(prideAllList){
   prideList <- lapply(prideAllList,prideMiniList2DF)
   #---------
-  if (!requireNamespace("plyr", quietly = TRUE)) {
-    stop("plyr needed for this function to work. Please install it.",
-         call. = FALSE)
-  }
+  # if (!requireNamespace("plyr", quietly = TRUE)) {
+  #   stop("plyr needed for this function to work. Please install it.",
+  #        call. = FALSE)
+  # }
   #---------
   prideDF <- plyr::ldply(prideList)
   return(prideDF)
