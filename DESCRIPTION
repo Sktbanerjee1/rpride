@@ -4,7 +4,9 @@ Title: Query and download PRIDE project information with R
 Version: 0.1.0
 Author: Rintu Kutum
 Maintainer: Rintu Kutum <rintukutum@gmail.com>
-Description: Query about all available PRIDE projects, download project files or specific raw, processed and other meta informations using PRIDE API and rpxmetadb.
+Description: Query about all available PRIDE projects, 
+    download project files or specific raw, processed 
+    and other meta informations using PRIDE API and rpridemetadb.
 License: MIT
 Encoding: UTF-8
 LazyData: true
