@@ -33,8 +33,8 @@ bindKeyWords<- function(keywords){
   return(gsub(', ',';',keywords))
 }
 
-formatLabHeads <- function(labHeads){
-  labHeadName <- paste(labHeads[[1]][c('title','firstName', 'lastName')], collapse = ' ')
+formatLabHeads <- function(x){
+  labHeadName <- paste(x$labHeads[[1]][c('title','firstName', 'lastName')], collapse = ' ')
   return(labHeadName)
 }
 
@@ -50,3 +50,11 @@ null2na <- function(x){
     return(x)
   }
 }
+
+submitterName <- function(x){
+  y <- paste(gsub(' ','',x$submitter[c('title','firstName','lastName')]),collapse = ' ')
+  return(y)
+}
+
+
+

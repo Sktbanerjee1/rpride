@@ -58,19 +58,26 @@ content2df <- function(content.pride){
 ##' pxd = "PXD004083"
 ##' pp <- getPrideProject(pxd)
 ##' pp.df <- prideMiniList2DF(pp)
-prideMiniList2DF <- function(prideMiniList){
+prideMiniList2DF <- function(x){
   prideMiniDF <- data.frame(
-    accession = prideMiniList$accession,
-    title = prideMiniList$title,
-    projectDescription = null2na(prideMiniList$projectDescription),
-    publicationDate = prideMiniList$publicationDate,
-    submissionType = prideMiniList$submissionType,
-    numAssays = prideMiniList$numAssays,
-    species = pleural2single(prideMiniList$species),
-    tissues = pleural2single(prideMiniList$tissues),
-    ptmNames = pleural2single(prideMiniList$ptmNames),
-    instrumentNames = pleural2single(prideMiniList$instrumentNames),
-    projectTags = pleural2single(prideMiniList$projectTags),
+    accession = x$accession,
+    title = x$title,
+    projectDescription = null2na(x$projectDescription),
+    publicationDate = x$publicationDate,
+    submissionType = x$submissionType,
+    numAssays = x$numAssays,
+    labHeads = formatLabHeads(x),
+    submitterName = submitterName(x),
+    species = pleural2single(x$species),
+    tissues = pleural2single(x$tissues),
+    ptmNames = pleural2single(x$ptmNames),
+    numProteins = x$numProteins,
+    numPeptides = x$numPeptides,
+    numSpectra = x$numSpectra,
+    numUniquePeptides = x$numUniquePeptides,
+    numIdentifiedSpectra = x$numIdentifiedSpectra,
+    instrumentNames = pleural2single(x$instrumentNames),
+    projectTags = pleural2single(x$projectTags),
     stringsAsFactors =FALSE
   )
   return(prideMiniDF)
@@ -94,3 +101,27 @@ prideAllList2DF <- function(prideAllList){
   prideDF <- plyr::ldply(prideList)
   return(prideDF)
 }
+
+#------
+getNumProteins <- function(x){
+  return(x$numProteins)
+}
+
+getNumPeptides <- function(x){
+  return(x$numPeptides)
+}
+
+getNumSpectra <- function(x){
+  return(x$numSpectra)
+}
+
+getNumUniqPeptides <- function(x){
+  return(x$numUniquePeptides)
+}
+
+getNumIdentifiedSpectra <- function(x){
+  return(x$numIdentifiedSpectra)
+}
+
+
+

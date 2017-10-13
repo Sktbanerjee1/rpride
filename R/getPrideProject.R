@@ -17,6 +17,6 @@ getPrideProject <- function(pxd){
   # }
   # #----------
   contentPRIDE <- httr::GET(link)
-  queryContent <- prideMiniList2DF(connectionStatus(contentPRIDE))
+  queryContent <- connectionStatus(contentPRIDE)
   return(queryContent)
 }
