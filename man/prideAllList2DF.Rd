@@ -9,7 +9,3 @@ prideAllList2DF(prideAllList)
 \description{
 prideAllList2DF
 }
-\examples{
-pride.projects <- getAllPrideProject()
-pride.projects.df <- prideAllList2DF(pride.projects)
-}

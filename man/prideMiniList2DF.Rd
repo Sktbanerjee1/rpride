@@ -2,15 +2,10 @@
 % Please edit documentation in R/utils.R
 \name{prideMiniList2DF}
 \alias{prideMiniList2DF}
-\title{List to data.frame}
+\title{List to data.frame of all PRIDE projects}
 \usage{
-prideMiniList2DF(prideMiniList)
+prideMiniList2DF(x)
 }
 \description{
 getAllPrideProject helper function, converts list to data.frame format
-}
-\examples{
-pxd = "PXD004083"
-pp <- getPrideProject(pxd)
-pp.df <- prideMiniList2DF(pp)
 }
