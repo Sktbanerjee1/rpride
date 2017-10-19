@@ -50,14 +50,9 @@ content2df <- function(content.pride){
   return(df.pride)
 }
 
-##' @title List to data.frame
+##' @title List to data.frame of all PRIDE projects
 ##' @name prideMiniList2DF
 ##' @description  getAllPrideProject helper function, converts list to data.frame format
-##' @export
-##' @examples
-##' pxd = "PXD004083"
-##' pp <- getPrideProject(pxd)
-##' pp.df <- prideMiniList2DF(pp)
 prideMiniList2DF <- function(x){
   prideMiniDF <- data.frame(
     accession = x$accession,
@@ -66,16 +61,9 @@ prideMiniList2DF <- function(x){
     publicationDate = x$publicationDate,
     submissionType = x$submissionType,
     numAssays = x$numAssays,
-    labHeads = formatLabHeads(x),
-    submitterName = submitterName(x),
     species = pleural2single(x$species),
     tissues = pleural2single(x$tissues),
     ptmNames = pleural2single(x$ptmNames),
-    numProteins = x$numProteins,
-    numPeptides = x$numPeptides,
-    numSpectra = x$numSpectra,
-    numUniquePeptides = x$numUniquePeptides,
-    numIdentifiedSpectra = x$numIdentifiedSpectra,
     instrumentNames = pleural2single(x$instrumentNames),
     projectTags = pleural2single(x$projectTags),
     stringsAsFactors =FALSE
@@ -86,12 +74,8 @@ prideMiniList2DF <- function(x){
 ##' @title prideAllList2DF
 ##' @name prideAllList2DF
 ##' @description  prideAllList2DF
-##' @export
-##' @examples
-##' pride.projects <- getAllPrideProject()
-##' pride.projects.df <- prideAllList2DF(pride.projects)
 prideAllList2DF <- function(prideAllList){
-  prideList <- lapply(prideAllList,prideMiniList2DF)
+  prideList <- lapply(prideAllList, prideMiniList2DF)
   #---------
   # if (!requireNamespace("plyr", quietly = TRUE)) {
   #   stop("plyr needed for this function to work. Please install it.",

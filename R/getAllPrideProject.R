@@ -32,5 +32,6 @@ getAllPrideProject <- function(resultsPerPage = 100){
   }
   cat(paste0(Sys.time(),'\n'))
   cat(paste0('Number of PRIDE projects downloaded = ',count,'\n'))
-  return(allProjects)
+  pride.df <- prideAllList2DF(allProjects)
+  return(pride.df)
 }

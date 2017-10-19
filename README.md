@@ -1,2 +1,2 @@
 # rpride
-PRIDE api for R
+PRIDE api for R users
