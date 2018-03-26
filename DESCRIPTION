@@ -1,7 +1,7 @@
 Package: rpride
 Type: Package
 Title: Query and download PRIDE project information with R
-Version: 0.1.0
+Version: 1.0.0
 Author: Rintu Kutum
 Maintainer: Rintu Kutum <rintukutum@gmail.com>
 Description: Query about all available PRIDE projects, 
