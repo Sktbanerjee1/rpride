@@ -19,6 +19,6 @@ project.info <- get.project.detail(pxd = pxd)
 
 ## Get all PRIDE projects
 ```{R}
-all.pride.projects <- get.project.list(pxd = pxd)
+all.pride.projects <- get.project.list()
 ```
 
