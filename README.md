@@ -22,4 +22,3 @@ project.info <- get.project.detail(pxd = pxd)
 all.pride.projects <- get.project.list(pxd = pxd)
 ```
 
-
