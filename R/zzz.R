@@ -4,7 +4,7 @@
 connectionStatus <- function(resposeServer){
   status <- resposeServer$status_code
   if(status == 200){
-    cat('Respose >>>> "OK"\n')
+    # cat('Respose >>>> "OK"\n')
     queryContent <- httr::content(resposeServer)
     return(queryContent)
   }

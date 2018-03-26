@@ -21,7 +21,7 @@ get.project.detail <- function(accession){
 ##' @export
 get.project.list <- function(
   query = NULL,	# string
-  resultsPerPage = 10000,	# integer
+  resultsPerPage = 100,	# integer
   # id, project_title
   order = 'desc',	# string; sorting order asc (ascending) or desc(descending)
   speciesFilter = NULL,	# array[string]; NCBI taxon ID, 9606 for human
@@ -50,6 +50,9 @@ get.project.list <- function(
   p.count <- as.numeric(project.avail['count'])
   if(length(grep('?',project.avail['url'])) != 0){
     query.c <- strsplit(project.avail['url'],split='\\?')[[1]][2]
+    if(is.na(query.c)){
+      query.c <- ''
+    }
     baseURL <- paste0(
       baseURL,
       query.c,
@@ -69,10 +72,17 @@ get.project.list <- function(
   }else{
     nPages <- 0
   }
-  if(length(nPages) > 1){
+  if(nPages > 1){
     projectPerPage <- list()
     # page starts from 0
+    ###################
+    library('progress')
+    pb <- progress_bar$new(
+      format = paste0(" Downloading ", p.count," PRIDE projects"," [:bar] :percent in :elapsed"),
+      total = nPages,
+      clear = FALSE, width= 60)
     for(i in 0:nPages){
+      pb$tick()
       cur.url <- paste0(
         baseURL,
         '&page=',
@@ -80,15 +90,9 @@ get.project.list <- function(
         '&order=',
         order)
       projectList <- connectionStatus(httr::GET(cur.url))[[1]]
-      cat(paste0('Page ', i+1, '\n'))
-      # as i = 0
-      # index should be 1 = i + 1
       projectPerPage[[i+1]] <- projectList
-      cat(paste0('Number of results = ',length(projectList), '\n'))
-      #-----
-      # sleep for few seconds
-      # Sys.sleep(0.2)
     }
+
     allProjects <- c()
     for(i in 1:length(projectPerPage)){
       allProjects <- append(allProjects, projectPerPage[[i]])
@@ -101,12 +105,12 @@ get.project.list <- function(
       '&order=',
       order)
     allProjects <- connectionStatus(httr::GET(cur.url))[[1]]
-
   }
 
   #----
   project.df <- project.list2df(x = allProjects)
   return(project.df)
+
 }
 
 ##' @name get.project.count
