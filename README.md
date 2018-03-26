@@ -1,5 +1,5 @@
 # rpride
-PRIDE api for R users. It uses PRIDE web API using `httr` package to download meta informations about PRIDE projects.
+PRIDE api for R users. It uses [PRIDE web API](https://www.ebi.ac.uk/pride/ws/archive/) and `httr` package to download PRIDE projects informations.
 
 ## Install
 ```{R}
