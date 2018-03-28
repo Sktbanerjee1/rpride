@@ -13,7 +13,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 Imports: plyr,
     httr,
-Remotes: r-lib/progress
+    progress
 Suggests: knitr,
     rmarkdown
 VignetteBuilder: knitr
