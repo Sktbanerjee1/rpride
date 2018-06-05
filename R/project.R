@@ -15,11 +15,11 @@ get.project.detail <- function(accession){
   return(queryContent)
 }
 
-##' @name get.project.list
+##' @name get.pride.projects
 ##' @description Get all projects lised in PRIDE database
 ##' @title Get all Projects
 ##' @export
-get.project.list <- function(
+get.pride.projects <- function(
   query = NULL,	# string
   resultsPerPage = 100,	# integer
   # id, project_title
