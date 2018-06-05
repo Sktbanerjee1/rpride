@@ -14,7 +14,7 @@ library('rpride')
 # pride ID or proteome exchange ID
 # pxd <- 'PXD007997' # this is a MassIVE id
 pxd <- 'PXD000561'
-project.info <- get.project.detail(pxd = pxd)
+project.info <- get.project.detail(pxd)
 ```
 
 ## Get all PRIDE projects
