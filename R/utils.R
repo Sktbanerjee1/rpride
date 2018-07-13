@@ -88,3 +88,18 @@ generate.query.c <- function(
   ))
   return(query.c)
 }
+################# FILE
+beautify.ppf <- function(ppf){
+  projectFileTypes <- sapply(ppf,function(x){x$fileType})
+  fileTypes <- unique(projectFileTypes)
+  ppfOrder <- list()
+  for(i in 1:length(fileTypes)){
+    ppfOrder[[i]] <- ppf[projectFileTypes %in% fileTypes[i]]
+  }
+  names(ppfOrder) <- fileTypes
+  return(ppfOrder)
+}
+
+bytes2gb <- function(fileSize){
+  return(fileSize/(1024 * 1024 *1024))
+}
