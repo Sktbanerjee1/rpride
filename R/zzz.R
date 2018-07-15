@@ -10,13 +10,17 @@ connectionStatus <- function(resposeServer){
     return(queryContent)
   }
   if(status == 401){
-    stop("Unauthorized content requested!\n")
+    message("Unauthorized content requested!")
+    # not available
+    return(NA)
   }
   if(status == 403){
-    stop("Forbidden content requested!\n")
+    message("Forbidden content requested!")
+    return(NA)
   }
   if(status == 404){
-    stop("Content requested was not found!\n")
+    message("Content requested was not found!\n")
+    return(NA)
   }
 }
 
