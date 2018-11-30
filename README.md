@@ -2,7 +2,7 @@
 <img src="https://github.com/rintukutum/r-pack-logo/blob/master/logo/rpride-blue-600dpi.png" height="75">
 
 
-# rpride
+# <img src="https://github.com/rintukutum/r-pack-logo/blob/master/logo/rpride-blue-bandage.png" height="36" align="middle">rpride
 PRIDE api for R users. It uses [PRIDE web API](https://www.ebi.ac.uk/pride/ws/archive/) and `httr` package to download PRIDE projects informations. Retrieve project `summary`, `detail`, `assay` and `files` using PRIDE accession-ID.
 
 ## Install
