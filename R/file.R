@@ -23,6 +23,8 @@ get.project.file.count <- function(accession = 'PXD004149'){
   return(queryContent)
 }
 
+##' @title get.assay.file
+##' @export get.assay.file
 get.assay.file <- function(assay.accession = '22134'){
   baseURL <- 'https://www.ebi.ac.uk:443/pride/ws/archive/file/list/assay/'
   url <- paste0(
@@ -32,6 +34,10 @@ get.assay.file <- function(assay.accession = '22134'){
   queryContent <- connectionStatus(resposeServer = httr::GET(url))[[1]]
   return(queryContent)
 }
+
+
+##' @title get.assay.file.count
+##' @export get.assay.file.count
 
 get.assay.file.count <- function(assay.accession = '22134'){
   baseURL <- 'https://www.ebi.ac.uk:443/pride/ws/archive/file/count/assay/'
