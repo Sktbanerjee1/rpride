@@ -1,5 +1,5 @@
 
-<img src="https://github.com/rintukutum/r-pack-logo/blob/master/logo/rpride-600dpi.png" height="75">
+<img src="https://github.com/rintukutum/r-pack-logo/blob/master/logo/rpride-blue-600dpi.png" height="75">
 
 
 # rpride
