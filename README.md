@@ -1,5 +1,5 @@
 # <img src="https://github.com/rintukutum/r-pack-logo/blob/master/logo/rpride-blue-600dpi.png" height="36" align="middle">
-An R package powered by PRIDE web api. Allows user to retrieve project `summary`, `detail`, `assay` and `files` using PRIDE accession-ID.  It uses [PRIDE web API](https://www.ebi.ac.uk/pride/ws/archive/) and `httr` package to download the content.
+An R package powered by PRIDE web api. It allows r-users to retrieve project `summary`, `detail`, `assay` and `files` using PRIDE accession-ID.  It uses [PRIDE web API](https://www.ebi.ac.uk/pride/ws/archive/) and `httr` package to download the content.
 
 ## Install
 ```{R}
