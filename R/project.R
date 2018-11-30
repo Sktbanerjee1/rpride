@@ -75,21 +75,22 @@ get.pride.projects <- function(
   if(nPages > 1){
     projectPerPage <- list()
     # page starts from 0
-    ###################
-    # library('progress')
-    # pb <- progress_bar$new(
-    #   format = paste0(" Downloading ", p.count," PRIDE projects"," [:bar] :percent in :elapsed"),
-    #   total = nPages,
-    #   clear = FALSE, width= 60)
+    ##################
+    library('progress')
+    pb <- progress_bar$new(
+      format = paste0("  downloading [:bar] :percent in :elapsed"),
+      total = nPages+1,
+      clear = FALSE, width= 60)
 
     for(i in 0:nPages){
-      message('Number of Pages dowloaded ',i+1,'/',nPages+1)
+      # message('Number of Pages dowloaded ',i+1,'/',nPages+1)
       cur.url <- paste0(
         baseURL,
         '&page=',
         i,
         '&order=',
         order)
+      pb$tick()
       projectList <- connectionStatus(httr::GET(cur.url))[[1]]
       projectPerPage[[i+1]] <- projectList
     }
