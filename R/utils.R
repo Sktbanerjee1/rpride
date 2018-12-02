@@ -1,4 +1,5 @@
-
+###############
+############### utils
 check.var <- function(var.name,var.value,status=NULL){
   if(is.null(status)){
     var.name <- NA
