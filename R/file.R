@@ -7,7 +7,11 @@ get.project.file <- function(accession = 'PXD004149'){
     accession
   )
   queryContent <- connectionStatus(resposeServer = httr::GET(url))[[1]]
-  queryContent <- beautify.ppf(queryContent)
+  if(is.null(queryContent)){
+    queryContent <- NA
+  }else{
+    queryContent <- beautify.ppf(queryContent)
+  }
   return(queryContent)
 }
 
